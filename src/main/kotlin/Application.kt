@@ -1,18 +1,21 @@
 package br.com.estudo
 
+import br.com.estudo.infrastructure.config.configureFrameworks
+import br.com.estudo.infrastructure.config.configureRouting
+import br.com.estudo.infrastructure.config.configureSerialization
 import io.ktor.server.application.*
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 
 fun main() {
-    embeddedServer(factory = Netty, port = 8081) {
+    embeddedServer(Netty, port = 8081) {
         module()
-    }.start(true)
+    }.start(wait = true)
 }
 
 fun Application.module() {
     configureFrameworks()
     configureSerialization()
     configureRouting()
-    configureDatabase()
 }
+

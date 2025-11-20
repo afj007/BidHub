@@ -1,4 +1,4 @@
-package br.com.estudo.dao
+package br.com.estudo.infrastructure.database.table
 
 import org.jetbrains.exposed.v1.core.dao.id.UUIDTable
 import org.jetbrains.exposed.v1.javatime.date
