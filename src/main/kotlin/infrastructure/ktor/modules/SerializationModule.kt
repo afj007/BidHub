@@ -1,5 +1,6 @@
-package br.com.estudo.infrastructure.config
+package br.com.estudo.infrastructure.ktor.modules
 
+import br.com.estudo.infrastructure.config.LocalDateAdapter
 import io.ktor.serialization.gson.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.*

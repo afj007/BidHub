@@ -1,4 +1,4 @@
-package br.com.estudo.infrastructure.config
+package br.com.estudo.infrastructure.database
 
 import org.jetbrains.exposed.v1.jdbc.Database
 

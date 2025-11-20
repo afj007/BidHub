@@ -1,8 +1,8 @@
 package br.com.estudo
 
-import br.com.estudo.infrastructure.config.configureFrameworks
-import br.com.estudo.infrastructure.config.configureRouting
-import br.com.estudo.infrastructure.config.configureSerialization
+import br.com.estudo.infrastructure.ktor.modules.configureFrameworks
+import br.com.estudo.infrastructure.ktor.modules.configureRouting
+import br.com.estudo.infrastructure.ktor.modules.configureSerialization
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*

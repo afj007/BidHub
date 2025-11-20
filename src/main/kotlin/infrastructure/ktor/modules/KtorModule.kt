@@ -1,8 +1,10 @@
-package br.com.estudo.infrastructure.config
+package br.com.estudo.infrastructure.ktor.modules
 
+import br.com.estudo.application.user.controller.UserController
 import br.com.estudo.domain.user.repository.UserRepository
 import br.com.estudo.infrastructure.database.repository.UserRepositoryImpl
 import br.com.estudo.domain.user.service.UserService
+import br.com.estudo.infrastructure.database.configureDatabase
 import io.ktor.server.application.*
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
@@ -16,8 +18,16 @@ fun Application.configureFrameworks() {
         modules(
             module {
                 single { configureDatabase() }
-                singleOf(::UserRepositoryImpl) { bind<UserRepository>() }
+
+                //Controller
+                singleOf(::UserController)
+
+                //Service
                 singleOf(::UserService)
+
+
+                //Repository
+                singleOf(::UserRepositoryImpl) { bind<UserRepository>() }
             }
         )
     }

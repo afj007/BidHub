@@ -4,6 +4,7 @@ import br.com.estudo.domain.user.entity.User
 import br.com.estudo.domain.user.repository.UserRepository
 import br.com.estudo.infrastructure.database.table.UserTable
 import org.jetbrains.exposed.v1.jdbc.Database
+import org.jetbrains.exposed.v1.jdbc.insert
 import org.jetbrains.exposed.v1.jdbc.selectAll
 import org.jetbrains.exposed.v1.jdbc.transactions.transaction
 
@@ -22,4 +23,17 @@ class UserRepositoryImpl(
                 )
             }
         }
+
+    override suspend fun save(model: User): User {
+        transaction(database) {
+            UserTable.insert {
+                it[id] = model.id
+                it[name] = model.name
+                it[email] = model.email
+                it[dateOfBirth] = model.dateOfBirth
+            }
+        }
+
+        return model
+    }
 }
