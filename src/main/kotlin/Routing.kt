@@ -11,4 +11,10 @@ import org.koin.ktor.plugin.Koin
 import org.koin.logger.slf4jLogger
 
 fun Application.configureRouting() {
+    routing {
+        get {
+            call.respond("Olá Mundo, to funfando!!")
+        }
+    }
+
 }
