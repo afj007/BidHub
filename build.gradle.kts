@@ -25,8 +25,7 @@ dependencies {
     implementation(libs.exposed.jdbc)
     implementation(libs.exposed.java.time)
     implementation("org.postgresql:postgresql:42.7.3")
-
-
+    implementation("com.zaxxer:HikariCP:4.0.3")
 
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
